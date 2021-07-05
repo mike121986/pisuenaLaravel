@@ -20,8 +20,8 @@ class CreateSubCategoriesTable extends Migration
             $table->string('slug');
             $table->string('image');
             $table->unsignedBigInteger('category_id');
-            $table->boolean('color');
-            $table->boolean('size');
+            $table->boolean('color')->default(false);
+            $table->boolean('size')->default(false);
 
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
