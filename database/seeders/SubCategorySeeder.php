@@ -103,11 +103,15 @@ class SubCategorySeeder extends Seeder
                 'name' => 'Hombres',
                 'slug' => Str::slug('Hombres'),
                 'category_id' => 5,
+                'color' => true,
+                'size' => true,
             ],
             [
                 'name' => 'Lentes',
                 'slug' => Str::slug('Lentes'),
                 'category_id' => 5,
+                'color' => true,
+                'size' => true,
             ],
             [
                 'name' => 'Relojes',
