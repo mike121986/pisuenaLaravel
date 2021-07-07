@@ -1120,6 +1120,9 @@ select {
 .z-50 {
 	z-index: 50;
 }
+.order-last {
+	order: 9999;
+}
 .col-span-6 {
 	grid-column: span 6 / span 6;
 }
@@ -1133,6 +1136,10 @@ select {
 .mx-6 {
 	margin-left: 1.5rem;
 	margin-right: 1.5rem;
+}
+.my-2 {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
 }
 .ml-3 {
 	margin-left: 0.75rem;
@@ -1203,11 +1210,14 @@ select {
 .mb-4 {
 	margin-bottom: 1rem;
 }
+.mb-3 {
+	margin-bottom: 0.75rem;
+}
 .-mt-px {
 	margin-top: -1px;
 }
-.mb-3 {
-	margin-bottom: 0.75rem;
+.mb-2 {
+	margin-bottom: 0.5rem;
 }
 .block {
 	display: block;
@@ -1254,17 +1264,14 @@ select {
 .h-20 {
 	height: 5rem;
 }
+.h-64 {
+	height: 16rem;
+}
 .h-full {
 	height: 100%;
 }
 .h-2 {
 	height: 0.5rem;
-}
-.h-1 {
-	height: 0.25rem;
-}
-.h-64 {
-	height: 16rem;
 }
 .min-h-screen {
 	min-height: 100vh;
@@ -1311,14 +1318,14 @@ select {
 .w-20 {
 	width: 5rem;
 }
+.w-9 {
+	width: 2.25rem;
+}
 .w-96 {
 	width: 24rem;
 }
 .w-2 {
 	width: 0.5rem;
-}
-.w-9 {
-	width: 2.25rem;
 }
 .min-w-0 {
 	min-width: 0px;
@@ -1584,12 +1591,15 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(249, 115, 22, var(--tw-bg-opacity));
 }
-.bg-red-500 {
+.bg-trueGray-500 {
 	--tw-bg-opacity: 1;
-	background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
+	background-color: rgba(115, 115, 115, var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
 	--tw-bg-opacity: 0.25;
+}
+.bg-opacity-100 {
+	--tw-bg-opacity: 1;
 }
 .object-cover {
 	-o-object-fit: cover;
@@ -1733,10 +1743,6 @@ select {
 	font-size: 1.25rem;
 	line-height: 1.75rem;
 }
-.text-5xl {
-	font-size: 3rem;
-	line-height: 1;
-}
 .text-3xl {
 	font-size: 1.875rem;
 	line-height: 2.25rem;
@@ -1834,13 +1840,9 @@ select {
 	--tw-text-opacity: 1;
 	color: rgba(16, 185, 129, var(--tw-text-opacity));
 }
-.text-orange-500 {
+.text-trueGray-500 {
 	--tw-text-opacity: 1;
-	color: rgba(249, 115, 22, var(--tw-text-opacity));
-}
-.text-red-100 {
-	--tw-text-opacity: 1;
-	color: rgba(254, 226, 226, var(--tw-text-opacity));
+	color: rgba(115, 115, 115, var(--tw-text-opacity));
 }
 .text-gray-200 {
 	--tw-text-opacity: 1;
@@ -1850,9 +1852,13 @@ select {
 	--tw-text-opacity: 1;
 	color: rgba(209, 213, 219, var(--tw-text-opacity));
 }
-.text-trueGray-500 {
+.text-red-100 {
 	--tw-text-opacity: 1;
-	color: rgba(115, 115, 115, var(--tw-text-opacity));
+	color: rgba(254, 226, 226, var(--tw-text-opacity));
+}
+.text-orange-500 {
+	--tw-text-opacity: 1;
+	color: rgba(249, 115, 22, var(--tw-text-opacity));
 }
 .underline {
 	text-decoration: underline;
@@ -1967,6 +1973,12 @@ select {
 		padding-right: 2rem;
 	}
 }
+#navigation-menu {
+        height: calc(100vh - 4rem);
+    }
+.navigation-link:hover .navigation-submenu {
+        display: block !important
+    }
 .hover\:border-gray-300:hover {
 	--tw-border-opacity: 1;
 	border-color: rgba(209, 213, 219, var(--tw-border-opacity));
@@ -1995,10 +2007,6 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
 }
-.hover\:bg-gray-500:hover {
-	--tw-bg-opacity: 1;
-	background-color: rgba(107, 114, 128, var(--tw-bg-opacity));
-}
 .hover\:bg-orange-500:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(249, 115, 22, var(--tw-bg-opacity));
@@ -2023,13 +2031,13 @@ select {
 	--tw-text-opacity: 1;
 	color: rgba(17, 24, 39, var(--tw-text-opacity));
 }
-.hover\:text-white:hover {
-	--tw-text-opacity: 1;
-	color: rgba(255, 255, 255, var(--tw-text-opacity));
-}
 .hover\:text-orange-500:hover {
 	--tw-text-opacity: 1;
 	color: rgba(249, 115, 22, var(--tw-text-opacity));
+}
+.hover\:text-white:hover {
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 .focus\:z-10:focus {
 	z-index: 10;
@@ -2198,10 +2206,6 @@ select {
 		margin-left: 1.5rem;
 	}
 
-	.sm\:ml-0 {
-		margin-left: 0px;
-	}
-
 	.sm\:block {
 		display: block;
 	}
@@ -2216,10 +2220,6 @@ select {
 
 	.sm\:h-10 {
 		height: 2.5rem;
-	}
-
-	.sm\:h-20 {
-		height: 5rem;
 	}
 
 	.sm\:w-10 {
@@ -2345,12 +2345,12 @@ select {
 	.sm\:text-left {
 		text-align: left;
 	}
-
-	.sm\:text-right {
-		text-align: right;
-	}
 }
 @media (min-width: 768px) {
+
+	.md\:order-first {
+		order: -9999;
+	}
 
 	.md\:col-span-2 {
 		grid-column: span 2 / span 2;
@@ -2362,6 +2362,10 @@ select {
 
 	.md\:mt-0 {
 		margin-top: 0px;
+	}
+
+	.md\:block {
+		display: block;
 	}
 
 	.md\:grid {
@@ -2376,6 +2380,10 @@ select {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
+	.md\:justify-start {
+		justify-content: flex-start;
+	}
+
 	.md\:gap-6 {
 		gap: 1.5rem;
 	}
@@ -2386,6 +2394,11 @@ select {
 
 	.md\:border-l {
 		border-left-width: 1px;
+	}
+
+	.md\:px-4 {
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 }
 @media (min-width: 1024px) {
