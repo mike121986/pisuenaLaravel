@@ -1,8 +1,7 @@
 <style>
-    #navigation-menu {
-        height: calc(100vh -4rem);
+    #navigation-menu{
+        height: calc(100vh - 4rem);
     }
-
 </style>
 
 <header class="bg-trueGray-700 sticky top-0">
@@ -57,7 +56,7 @@
             @else
                 <x-jet-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <i class="fas fa-user-circle text-white text-5xl cursor-pointer"></i>
+                        <i class="fas fa-user-circle text-white text-3xl cursor-pointer"></i>
                     </x-slot>
                     <x-slot name="content">
                         <x-jet-dropdown-link href="{{ route('login') }}">
@@ -78,10 +77,13 @@
         <div class="container h-full">
             <div class="grid grid-cols-4 h-full">
                 <ul class="bg-white">
-
+ 
                 </ul>
-                <div class="col-span-3 bg-gray-100"></div>
+                <div class="col-span-3 bg-gray-100">
+ 
+                </div>
             </div>
         </div>
     </nav>
+ 
 </header>
