@@ -18,7 +18,7 @@ module.exports = {
             colors: {
                trueGray: colors.trueGray,
                orange: colors.orange,
-               greenLine :colors.lime,
+               greenLime :colors.lime,
               }
         },
     },
