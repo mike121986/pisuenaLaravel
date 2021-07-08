@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Product;
-use App\Models\SubCategory;
+use App\Models\Subcategory;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -25,7 +25,7 @@ class ProductFactory extends Factory
     {
 
         $name = $this->faker->sentence(2);
-        $subcategory = SubCategory::all()->random();
+        $subcategory = Subcategory::all()->random();
         $category = $subcategory->category;
         $brands = $category->brands->random();
 

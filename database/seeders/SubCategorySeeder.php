@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\SubCategory;
+use App\Models\Subcategory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
-class SubCategorySeeder extends Seeder
+class SubcategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.

@@ -27,7 +27,7 @@ class Product extends Model
 
       // relacion inversa entre products y subcategory
       public function subcategory(){
-          return $this->belongsTo(SubCategory::class);
+          return $this->belongsTo(Subcategory::class);
       }
 
       // relacion muchos a muchos con colores
