@@ -116,6 +116,7 @@
                     </li>
                 @endforeach
             </ul>
+
             <p class="bg-trueGray-500 px-6 my-2">USUARIOS</p>
             @livewire('cart-mobil')
             @auth
