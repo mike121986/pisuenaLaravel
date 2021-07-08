@@ -1587,19 +1587,22 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(64, 64, 64, var(--tw-bg-opacity));
 }
-.bg-orange-500 {
-	--tw-bg-opacity: 1;
-	background-color: rgba(249, 115, 22, var(--tw-bg-opacity));
-}
 .bg-trueGray-500 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(115, 115, 115, var(--tw-bg-opacity));
+}
+.bg-orange-500 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(249, 115, 22, var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
 	--tw-bg-opacity: 0.25;
 }
 .bg-opacity-100 {
 	--tw-bg-opacity: 1;
+}
+.fill-current {
+	fill: currentColor;
 }
 .object-cover {
 	-o-object-fit: cover;
@@ -1852,13 +1855,13 @@ select {
 	--tw-text-opacity: 1;
 	color: rgba(209, 213, 219, var(--tw-text-opacity));
 }
-.text-red-100 {
-	--tw-text-opacity: 1;
-	color: rgba(254, 226, 226, var(--tw-text-opacity));
-}
 .text-orange-500 {
 	--tw-text-opacity: 1;
 	color: rgba(249, 115, 22, var(--tw-text-opacity));
+}
+.text-red-100 {
+	--tw-text-opacity: 1;
+	color: rgba(254, 226, 226, var(--tw-text-opacity));
 }
 .underline {
 	text-decoration: underline;
