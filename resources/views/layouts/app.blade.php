@@ -48,7 +48,7 @@
                 show() {
                     if (this.open) {
                         // se cierra el menu
-                        dropdown.open = false;
+                        this.open = false;
                         document.getElementsByTagName('html')[0].style.overflow = 'auto';
                     } else {
                         // se esta abiendp el menu
