@@ -44,4 +44,10 @@ class Product extends Model
     {
         return $this->morphMany(Image::class, "imageable");
     }
+
+    /* url amigables */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
