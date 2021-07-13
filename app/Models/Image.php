@@ -9,10 +9,8 @@ class Image extends Model
 {
     use HasFactory;
 
-    // asignacion masiva
-    protected $fillable = ['url', 'imageable_id','imageable_type'];
+    protected $fillable = ['url', 'imageable_id', 'imageable_type'];
 
-    // relacion Poliformica
     public function imageable(){
         return $this->morphTo();
     }

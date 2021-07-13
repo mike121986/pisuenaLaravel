@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,40 +13,53 @@ class Product extends Model
     const BORRADOR = 1;
     const PUBLICADO = 2;
 
+    protected $guarded = ['id', 'created_at', 'updated_at'];
 
-    // evitar que se llene por asigancion masiva
-    protected $guaded = ['id', 'created_at', 'updated_at'];
+    //accesores
 
-    // relacion entre uno a muchos 
-    public function sizes()
-    {
+ /*    public function getStockAttribute(){
+        if ($this->subcategory->size) {
+            return  ColorSize::whereHas('size.product', function(Builder $query){
+                        $query->where('id', $this->id);
+                    })->sum('quantity');
+        } elseif($this->subcategory->color) {
+            return  ColorProduct::whereHas('product', function(Builder $query){
+                        $query->where('id', $this->id);
+                    })->sum('quantity');
+        }else{
+
+            return $this->quantity;
+
+        }
+        
+    } */
+
+
+    //Relacion uno a muchos
+    public function sizes(){
         return $this->hasMany(Size::class);
     }
-    // relacion inversa con productos con brads
-    public function brands()
-    {
+
+    //Relacion uno a muchos inversa
+    public function brand(){
         return $this->belongsTo(Brand::class);
     }
 
-    // relacion inversa entre products y subcategory
-    public function subcategory()
-    {
+    public function subcategory(){
         return $this->belongsTo(Subcategory::class);
     }
 
-    // relacion muchos a muchos con colores
-    public function colors()
-    {
-        return $this->belongsToMany(Color::class);
+    //Relacion muchos a muchos
+    public function colors(){
+        return $this->belongsToMany(Color::class)->withPivot('quantity', 'id');
     }
 
-    // realicion uno a muchos poliformica
-    public function images()
-    {
+    //relacion uno a muchos polimoefica
+    public function images(){
         return $this->morphMany(Image::class, "imageable");
     }
 
-    /* url amigables */
+    //URL AMIGABLES
     public function getRouteKeyName()
     {
         return 'slug';
