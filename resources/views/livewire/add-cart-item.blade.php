@@ -9,7 +9,9 @@
             wire:click="decrement">
                 -
             </x-jet-secondary-button>
+
             <span class="mx-2 text-gray-700">{{ $qty }}</span>
+
             <x-jet-secondary-button 
             x-bind:disabled="$wire.qty >= $wire.quantity" 
             wire:loading.attr="disabled" 
@@ -19,7 +21,11 @@
             </x-jet-secondary-button>
         </div>
         <div class="flex-1">
-            <x-button color="orange" class="w-full">
+            <x-button color="orange" class="w-full"
+            x-bind:disabled="$wire.qty > $wire.quantity" 
+            wire:click="addItem"
+            wire:loading.attr="disabled"
+            wire:target="addItem">
                 AGREGAR A CARRITO DE COMPRAS
             </x-button>
         </div>
