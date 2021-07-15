@@ -17,7 +17,7 @@
         @endif
     </p>
 
-    <div class="flex mt-4">
+    <div class="flex">
         <div class="mr-4">
             <x-jet-secondary-button 
                 disabled x-bind:disabled="$wire.qty <= 1" 

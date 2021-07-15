@@ -17,7 +17,7 @@ class Product extends Model
 
     //accesores
 
- /*    public function getStockAttribute(){
+    public function getStockAttribute(){
         if ($this->subcategory->size) {
             return  ColorSize::whereHas('size.product', function(Builder $query){
                         $query->where('id', $this->id);
@@ -32,7 +32,7 @@ class Product extends Model
 
         }
         
-    } */
+    }
 
 
     //Relacion uno a muchos

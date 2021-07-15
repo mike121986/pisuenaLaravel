@@ -53,9 +53,9 @@
                     <p class="text-lg text-gray-700 mt-2 mb-3"><span class="font-bold">Total:</span>Mx
                         {{ Cart::subtotal() }}</p>
 
-                    <x-button-enlace color="orange" class="w-full">
-                        Ir al Carrito de Compras
-                    </x-button-enlace>
+                        <x-button-enlace href="{{ route('shoping-cart') }}" color="orange" class="w-full">
+                            Ir al carrito de compras
+                        </x-button-enlace>
                 </div>
             @endif
         </x-slot>

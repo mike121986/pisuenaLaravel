@@ -13,7 +13,7 @@ class Size extends Model
     protected $fillable = ['name','product_id'];
 
     // relacion inversa uno a muchos 
-    public function products(){
+    public function product(){
         return $this->belongsTo(Product::class);
     }
 
