@@ -6,7 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
 use App\Http\Livewire\ShopingCart;
-
+use App\Http\Livewire\CreateOrder;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,11 +27,5 @@ Route::get('products/{product}', [ProductController::class, 'show'])->name('prod
 
 Route::get('shoping-cart',ShopingCart::class)->name('shoping-cart');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
-
-Route::get('prueba', function () {
-    \Cart::destroy();
-});
+// ruta para ordenes
+Route::get('users/create', CreateOrder::class)->middleware('auth')->name('orders.create');
