@@ -28,4 +28,4 @@ Route::get('products/{product}', [ProductController::class, 'show'])->name('prod
 Route::get('shoping-cart',ShopingCart::class)->name('shoping-cart');
 
 // ruta para ordenes
-Route::get('users/create', CreateOrder::class)->middleware('auth')->name('orders.create');
+Route::get('orders/create', CreateOrder::class)->middleware('auth')->name('orders.create');

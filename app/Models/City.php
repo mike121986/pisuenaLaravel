@@ -9,7 +9,14 @@ class City extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name','department_id','cost'];
+
     public function districts(){
         return $this->hasMany(District::class);
     }
+
+    public function orders(){
+        return $this->hasMany(Order::class);
+    }
+
 }
