@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
 use App\Http\Livewire\ShopingCart;
@@ -29,3 +30,5 @@ Route::get('shoping-cart',ShopingCart::class)->name('shoping-cart');
 
 // ruta para ordenes
 Route::get('orders/create', CreateOrder::class)->middleware('auth')->name('orders.create');
+// ruta para pagar
+Route::get('orders/{order}/payment', [OrderController::class,'payment'])->name('orders.payment');
