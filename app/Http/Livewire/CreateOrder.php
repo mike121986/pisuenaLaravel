@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Department;
 use App\Models\Order;
 use App\Models\City;
+use App\Models\District;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CreateOrder extends Component
@@ -19,7 +20,7 @@ class CreateOrder extends Component
     /* estas propiedades nops ayudan teenere el control de los inputs de direccion y referencia */
     public $addres;
     public $references;
-    public $shipping_cost = 0;
+    public $shipping_cost = 0; /* esta variable guarda el costo de envio  */
 
     public $departments;
     public $cities = [];
@@ -56,12 +57,24 @@ class CreateOrder extends Component
     /* se mantiene a la escucha de la propiedad department id para saber si el envio es por medio gratis o envio a domicilio */
     public function updatedDepartmentId($value)
     {
-        $this->cities = City::where('department_id',$value)->get();
+        $this->cities = City::where('department_id', $value)->get();
+        $this->reset('city_id');
+    }
+
+    public function updatedCityId($value)
+    {
+        /* tenemos que saber que ciudad es la que se selecciona para calcular el costo xtra */
+        $city = City::find($value);
+        $this->shipping_cost = $city->cost;
+        $this->districts = District::where('city_id', $value)->get();
+
+        $this->reset('district_id');
     }
 
     /* al apretar el boton de continuar con la compra verificamos que los datos esten correcrtamente llenos */
     public function create_order()
     {
+        /* si envio type (que se necesite que se envie a una direccion ) */
         $rules = $this->rules;
         if ($this->envio_type == 2) {
             $rules['department_id'] = 'required';
@@ -70,17 +83,26 @@ class CreateOrder extends Component
             $rules['addres'] = 'required';
             $rules['references'] = 'required';
         }
-        $this->validate($rules);
 
+        $this->validate($rules);
+        /* si no  se requiere que se envie a una direccion se ocupan esta parte */
         $order = new Order();
         $order->user_id = auth()->user()->id;
         $order->contact = $this->contact;
         $order->phone = $this->phone;
         $order->envio_type = $this->envio_type;
-        $order->shipping_cost = $this->shipping_cost;
+        $order->shipping_cost = 0;
         $order->total = $this->shipping_cost + Cart::subtotal();
         $order->content = Cart::content();
-
+        /* si se requiere que se envie a una direccion  se agregane estos campos y se modufica shippuing cost */
+        if ($this->envio_type == 2) {
+            $order->shipping_cost = $this->shipping_cost;
+            $order->department_id = $this->department_id;
+            $order->city_id = $this->city_id;
+            $order->district_id = $this->district_id;
+            $order->addres = $this->addres;
+            $order->references = $this->references;
+        }
         $order->save();
 
         /* eliminamos lo que hay en el carrito de compras */
