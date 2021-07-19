@@ -1,0 +1,17 @@
+curl -X POST \
+-H "Content-Type: application/json" \
+-H 'Authorization: Bearer TEST-2958213110280924-071920-88ca2f3fbe92a20a431c9027d662bfd5-793377086' \
+"https://api.mercadopago.com/users/test_user" \
+-d '{"site_id":"MLM"}'
+
+usuario vendedor
+{"id":793824375,"nickname":"TETE457143","password":"qatest6501","site_status":"active","email":"test_user_64806998@testuser.com"}
+usaurio comprador
+{"id":793822054,"nickname":"TETE5327675","password":"qatest9538","site_status":"active","email":"test_user_57125981@testuser.com"}
+
+
+
+env
+
+MP_PUBLIC_KEY=TEST-e605ade9-7f50-44c8-b2c5-3e765884942e
+MP_ACCESS_TOKEN=TEST-2433127233514566-071921-ec6ba679ef48a13977f54df7fb240627-793824375
