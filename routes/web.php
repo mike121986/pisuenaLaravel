@@ -8,6 +8,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
 use App\Http\Livewire\ShopingCart;
 use App\Http\Livewire\CreateOrder;
+use App\Http\Controllers\WebHookcsController;
+use App\Http\Livewire\PaymentOrder;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +30,26 @@ Route::get('products/{product}', [ProductController::class, 'show'])->name('prod
 
 Route::get('shoping-cart',ShopingCart::class)->name('shoping-cart');
 
-// ruta para ordenes
-Route::get('orders/create', CreateOrder::class)->middleware('auth')->name('orders.create');
-// ruta para pagar
-Route::get('orders/{order}/payment', [OrderController::class,'payment'])->name('orders.payment');
+
+/* grupo de rutas */
+Route::middleware(['auth'])->group(function(){
+        
+    // ruta para ordenes
+    Route::get('orders/create', CreateOrder::class)->name('orders.create');
+
+    // ruta para pagar
+    Route::get('orders/{order}', [OrderController::class,'show'])->name('orders.show');
+
+    /* Route::get('orders/{order}/payment', [OrderController::class,'payment'])->name('orders.payment'); */
+    Route::get('orders/{order}/payment', PaymentOrder::class)->name('orders.payment');
+
+
+    // ruta para la webhoock
+    Route::post('webhoocks',WebHookcsController::class);
+
+    /* ruta para mostrar la notificacion mientras estamos en pruebas */
+    Route::get('orders/{order}/pay', [OrderController::class,'pay'])->name('orders.pay');
+
+    /* rutas para ver mis pedidos */
+    Route::get('orders',[OrderController::class,'index'])->name('orders.index');
+});
