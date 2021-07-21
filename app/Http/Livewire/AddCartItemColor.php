@@ -26,13 +26,11 @@ class AddCartItemColor extends Component
         $this->options['image'] = Storage::url($this->product->images->first()->url);
     }
 
-    public function updatedColorId($value)
-    {
+    public function updatedColorId($value){
         $color = $this->product->colors->find($value);
-        // $this->quantity = $color->pivot->quantity;
         $this->quantity = qty_avilable($this->product->id, $color->id);
         $this->options['color'] = $color->name;
-        
+        $this->options['color_id'] = $color->id;
     }
 
     public function decrement()

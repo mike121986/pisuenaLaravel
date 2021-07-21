@@ -35,10 +35,10 @@ class CreateOrder extends Component
         'phone' => 'required',
         'envio_type' => 'required'
     ];
-
-
+    
     public function mount()
     {
+       
         $this->departments = Department::all();
     }
     /* vamos a esta a la escucha de cambios en envio_type */
@@ -105,6 +105,9 @@ class CreateOrder extends Component
         }
         $order->save();
 
+        foreach (Cart::content() as $item) {
+            discount($item);
+        }
         /* eliminamos lo que hay en el carrito de compras */
         Cart::destroy();
 

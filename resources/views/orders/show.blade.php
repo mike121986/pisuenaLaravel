@@ -44,7 +44,7 @@
 
             @if ($order->status == 1)
 
-                <x-button-enlace class="ml-auto" href="{{ route('orders.payment', $order) }}">
+                <x-button-enlace class="ml-auto" color="orange" href="{{ route('orders.payment', $order) }}">
                     Ir a pagar
                 </x-button-enlace>
 
