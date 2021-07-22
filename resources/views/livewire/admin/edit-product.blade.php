@@ -19,7 +19,7 @@
         <h1 class="text-3xl text-center font-semibold mb-8">Complete esta información para crear un producto</h1>
 
         <div class="mb-4" wire:ignore>
-            <form action="{{-- {{ route('admin.products.files', $product) }} --}}" method="POST" class="dropzone"
+            <form action="{{ route('admin.products.files', $product) }}" method="POST" class="dropzone"
                 id="my-awesome-dropzone"></form>
         </div>
 
