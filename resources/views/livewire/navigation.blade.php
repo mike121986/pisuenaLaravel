@@ -10,7 +10,7 @@
             <span class="text-sm hidden md:block">Categorías</span>
         </a>
         <a href="/" class="mx-6">
-            <x-jet-application-mark class="block h-9 w-auto" />
+            <x-jet-application-mark class="block h-16 w-auto" />
         </a>
         {{-- este es el buscador --}}
         <div class="flex-1 hidden md:block">
