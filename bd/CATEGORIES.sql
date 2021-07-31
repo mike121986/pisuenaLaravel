@@ -1,0 +1,17 @@
+INSERT INTO categories (name, slug, icon, image) VALUES ('ABRASIVOS', 'abrasivos', '<i class="fas fa-spray-can"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('CARGA', 'carga', '<i class="fas fa-weight-hanging"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('CINTAS', 'cintas', '<i class="fas fa-slash"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('ELECTRICO', 'electrico', '<i class="fas fa-charging-station"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('EQUIPO DE SEGURIDAD', 'equipo-de-seguridad', '<i class="fas fa-hard-hat"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('ESCALERAS', 'escaleras', '<i class="far fa-tasks-alt"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('FIJACION', 'fijacion', '<i class="fas fa-screwdriver"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('HERRAMIENTA', 'herramienta', '<i class="fas fa-briefcase"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('HERRAMIENTA CORTE', 'herramienta-corte', '<i class="fas fa-briefcase"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('HERRAMIENTA ELECTRICA', 'herramienta-electrica', '<i class="fas fa-bolt"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('LIMPIEZA', 'limpieza', '<i class="fas fa-broom"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('MANGERAS', 'mangeras', '<i class="fas fa-horizontal-rule"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('ORGANIZACIÓN Y ALMACENAMIENTO', 'organización-y-almacenamiento', '<i class="fas fa-toolbox"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('PINTURAS', 'pinturas', '<i class="fas fa-air-freshener"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('PLOMERIA', 'plomeria', '<i class="fas fa-tools"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('REFACCIONES', 'refacciones', '<i class="fas fa-highlighter"></i>', 'categories/Imagen.jpg');
+INSERT INTO categories (name, slug, icon, image) VALUES ('SELLADORES Y RESANADORES', 'selladores-y-resanadores', '<i class="fas fa-stamp"></i>', 'categories/Imagen.jpg');

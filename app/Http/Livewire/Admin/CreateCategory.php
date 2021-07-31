@@ -86,7 +86,7 @@ class CreateCategory extends Component
     public function save(){
         $this->validate();
 
-        $image = $this->createForm['image']->store('categories');
+        $image = $this->createForm['image']->store('public/categories');
 
         $category = Category::create([
             'name' => $this->createForm['name'],
@@ -136,7 +136,7 @@ class CreateCategory extends Component
 
         if ($this->editImage) {
             Storage::delete($this->editForm['image']);
-            $this->editForm['image'] = $this->editImage->store('categories');
+            $this->editForm['image'] = $this->editImage->store('public/categories');
         }
 
         $this->category->update($this->editForm);

@@ -28,7 +28,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('city_id')->nullable();
             $table->unsignedBigInteger('district_id')->nullable();
             $table->string('addres')->nullable();
-            $table->string('references')->nullable();
+            $table->string('reference')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('department_id')->references('id')->on('departments');
             $table->foreign('city_id')->references('id')->on('cities');

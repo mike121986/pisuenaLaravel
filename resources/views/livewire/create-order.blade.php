@@ -35,7 +35,7 @@
                 <div class="px-6 pb-6 grid grid-cols-2 gap-6 hidden" :class="{ 'hidden':envio_type!=2}">
                     {{-- departmaentos --}}
                     <div>
-                        <x-jet-label value="Municipio" />
+                        <x-jet-label value="Estado" />
                         <select class="form-control w-full" wire:model='department_id'>
                             <option value="" disabled selected>Seleccione un departamento</option>
                             @foreach ($departments as $department)
@@ -46,7 +46,7 @@
                     </div>
                     {{-- ciudades --}}
                     <div>
-                        <x-jet-label value="Estado" />
+                        <x-jet-label value="Municipio" />
                         <select class="form-control w-full" wire:model='city_id'>
                             <option value="" disabled selected>Seleccione una ciudad</option>
                             @foreach ($cities as $city)
@@ -56,7 +56,7 @@
                         <x-jet-input-error for="city_id"/>
                     </div>
                     {{-- distritos --}}
-                    <div>
+                   {{--  <div>
                         <x-jet-label value="Ciudad" />
                         <select class="form-control w-full" wire:model='district_id'>
                             <option value="" disabled selected>Seleccione una ciudad</option>
@@ -65,7 +65,7 @@
                             @endforeach
                         </select>
                         <x-jet-input-error for="district_id"/>
-                    </div>
+                    </div> --}}
                     {{-- direccion --}}
                     <div>
                         <x-jet-label value="Dirección" />
@@ -75,8 +75,8 @@
                     {{-- referencia --}}
                     <div class="col-span-2">
                         <x-jet-label value="Referencia" />
-                        <x-jet-input class="w-full" wire:model="references" type="text" />
-                        <x-jet-input-error for="references" />
+                        <x-jet-input class="w-full" wire:model="reference" type="text" />
+                        <x-jet-input-error for="reference" />
                     </div>
                 </div>
             </div>

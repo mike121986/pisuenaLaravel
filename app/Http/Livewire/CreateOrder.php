@@ -19,7 +19,7 @@ class CreateOrder extends Component
     public $phone;
     /* estas propiedades nops ayudan teenere el control de los inputs de direccion y referencia */
     public $addres;
-    public $references;
+    public $reference;
     public $shipping_cost = 0; /* esta variable guarda el costo de envio  */
 
     public $departments;
@@ -50,7 +50,7 @@ class CreateOrder extends Component
                 'city_id',
                 'district_id',
                 'addres',
-                'references'
+                'reference'
             ]);
         }
     }
@@ -81,7 +81,7 @@ class CreateOrder extends Component
             $rules['city_id'] = 'required';
             $rules['district_id'] = 'required';
             $rules['addres'] = 'required';
-            $rules['references'] = 'required';
+            $rules['reference'] = 'required';
         }
 
         $this->validate($rules);
@@ -101,7 +101,7 @@ class CreateOrder extends Component
             $order->city_id = $this->city_id;
             $order->district_id = $this->district_id;
             $order->addres = $this->addres;
-            $order->references = $this->references;
+            $order->reference = $this->reference;
         }
         $order->save();
 

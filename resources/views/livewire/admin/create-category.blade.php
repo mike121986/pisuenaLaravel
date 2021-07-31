@@ -13,7 +13,7 @@
                 <x-jet-label>
                     Nombre
                 </x-jet-label>
-
+                
                 <x-jet-input wire:model="createForm.name" type="text" class="w-full mt-1" />
 
                 <x-jet-input-error for="createForm.name" />
@@ -147,6 +147,7 @@
                 <div>
                     <x-jet-label>
                         Nombre
+                        
                     </x-jet-label>
 
                     <x-jet-input wire:model="editForm.name" type="text" class="w-full mt-1" />
