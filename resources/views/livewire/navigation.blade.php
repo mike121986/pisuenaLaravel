@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 <header class="bg-blue-900 sticky h-32 top-0" style="z-index: 900" x-data="dropdown()">
     <div class="container flex items-center h-24 justify-between md:justify-start">
-=======
-<header class="bg-blue-900 sticky   top-0 " style="z-index: 900" x-data="dropdown()">
-    <div class="container flex items-center h-16 justify-between md:justify-start">
->>>>>>> 4720cf0f7c6c7bb54689fde7785cc63918ffa9e2
         <a :class="{'bg-opacity-100 text-orange-500' : open}" x-on:click="show()"
             class="flex flex-col items-center order-last md:order-first px-6 md:px-4 justify-center bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
